@@ -5,6 +5,22 @@ struct ListNode{
 int val;
 ListNode * next;
 };
+ ListNode* reverseList(ListNode* head) {
+
+        ListNode * current = head;
+        ListNode * prev = NULL;
+        while(current!=NULL)
+        {
+            ListNode * next = current->next;
+            current->next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+
+        return head;
+
+    }
 ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
 /** The method is used to
         find the intersection of LinkedLists**/
